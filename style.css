@@ -483,7 +483,7 @@ footer h5 {
   backdrop-filter: blur(10px);
   z-index: 100;
   background: none;
-  display: flex;
+  display: none;
 }
 
 .side-bar #contact {
@@ -585,6 +585,11 @@ footer h5 {
   height: 100px;
 }
 
+@media screen and (max-width:460px) {
+  .side-bar{
+    width: 100%;
+  }
+}
 
 @media screen and (max-width:600px),
 screen and (max-width:768px) {
@@ -719,4 +724,5 @@ screen and (max-width:768px) {
     transform: scale(100%);
     opacity: 1;  
   }
+
 }

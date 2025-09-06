@@ -65,6 +65,8 @@ header #lgo {
   border-radius: 20px;
   height: 30px;
   transition: 500ms ease;
+  margin-top: 30px;
+  position: absolute;
 }
 
 #contact img:hover {
@@ -929,7 +931,8 @@ screen and (max-width:768px) {
     justify-content: center;
     left: 50%;
     transform: translate(-40%);
-    width: 100%
+    width: 100%;
+    margin-left: -40px;
   }
 
   #cus {
@@ -959,7 +962,7 @@ screen and (max-width:768px) {
     margin: 30px;
     font-size: 17px;
     text-align: center;
-    margin-left: 70px;
+    margin-left: 80px;
   }
 
   .about h3 {
@@ -1030,5 +1033,6 @@ screen and (max-width:768px) {
     color: white;
     margin-top: 20px;
   }
+
 
 }

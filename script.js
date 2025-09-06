@@ -43,3 +43,10 @@ function showMore() {
 }
 
 setInterval(showMore, 4000); 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("img").forEach(img => {
+      img.setAttribute("loading", "lazy");
+    });
+  });
+

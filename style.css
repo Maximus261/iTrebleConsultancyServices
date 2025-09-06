@@ -482,10 +482,8 @@ footer {
 .all {
   margin-top: 30px;
   height: 400px;
-  width: 100%;
   display: flex;
   gap: 100px;
-  margin-left: 80px;
 }
 
 .about {

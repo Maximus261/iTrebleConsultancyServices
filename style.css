@@ -702,7 +702,7 @@ footer {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: url(images/back2.png);
+  background: url(images/back2.webp);
   background-size: cover;
 }
 
@@ -1034,3 +1034,5 @@ screen and (max-width:768px) {
     color: white;
     margin-top: 20px;
   }
+
+}

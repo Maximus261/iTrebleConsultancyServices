@@ -954,7 +954,6 @@ screen and (max-width:768px) {
     width: 100%;
     display: block;
     gap: 100px;
-    padding: 20px;
   }
 
   .about {
@@ -1036,4 +1035,5 @@ screen and (max-width:768px) {
   }
 
 }
+
 

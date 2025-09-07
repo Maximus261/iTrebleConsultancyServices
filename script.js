@@ -93,3 +93,49 @@ faders.forEach(fader => {
 
     nodes.forEach(n => observer.observe(n));
 })();
+
+
+const texts = [
+    "iTreble Consultancy Services",
+    "Study Abroad & Travel Made Easy – Admissions, Visas, Appointments"
+];
+
+let inex = 0;       // Which text in the array
+let charIndex = 0;   // Which character in the text
+let isDeleting = false;
+const typingSpeed = 100;  // ms per character
+const erasingSpeed = 50;  // ms per character when deleting
+const delayBetween = 1500; // pause before deleting
+
+const typeTextElement = document.getElementById("type-text");
+
+function type() {
+    const currentText = texts[inex];
+
+    if (!isDeleting) {
+        // Typing forward
+        typeTextElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentText.length) {
+            // Pause before deleting
+            isDeleting = true;
+            setTimeout(type, delayBetween);
+            return;
+        }
+    } else {
+        // Deleting
+        typeTextElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            isDeleting = false;
+            inex = (inex + 1) % texts.length; // Move to next text
+        }
+    }
+
+    setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+}
+
+// Start the loop
+type();

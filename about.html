@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="stle.css">
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="about-hero fade-in">
+      <div class="menu" onclick=showSidebar()>
+        <img src="images/menu.svg" alt>
+        <p>Menu</p>
+      </div>
+      <h1>About iTreble Consultancy Services</h1>
+      <p>Study Abroad & Travel Made Easy – Admissions, Visas, Appointments</p>
+    </section>
+    <div class="side-bar">
+      <ul id="contact">
+        <li onclick="hideSidebar()"><img src="images/close.svg" alt></li>
+        <a href="index.html"><button id="we">HOME</button></a>
+        <a href="about.html"><button id="we">ABOUT</button></a>
+        <a href="services.html"><button id="we">SERVICES</button></a>
+        <div id="dropdown">
+          <button id="soc2">SOCIALS <span>˅</span></button>
+          <ul id="social">
+            <li id="wa"><a href="https://wa.me/2348160203837"><i
+                  class="fab fa-whatsapp"></i>
+                Whatsapp</a><br /></li>
+            <li id="fa"><a href="#"><i class="fab fa-facebook"></i>
+                Facebook</a><br /></li>
+            <li id="in"><a href="#"><i class="fab fa-instagram"></i>
+                Instagram</a><br /></li>
+            <li id="ti"><a href="#"><i class="fab fa-tiktok"></i>
+                Tiktok</a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="about-container">
+
+      <div class="about-section fade-in">
+        <div class="about-text">
+          <h2>Who We Are</h2>
+          <p>At iTreble Consultancy Services, we believe studying abroad and
+            traveling should be exciting, not stressful. With years of
+            experience in <b>admissions, visas, and travel assistance</b>, we’ve
+            helped countless students and travelers achieve their dreams
+            worldwide.</p>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+            alt="Students Abroad">
+        </div>
+      </div>
+
+      <div class="about-section fade-in">
+        <div class="about-image">
+          <img
+            src="images/images.webp"
+            alt="Travel Support">
+        </div>
+        <div class="about-text">
+          <h2>Our Mission</h2>
+          <p>To make international education and travel <b>simple, affordable,
+              and stress-free</b> by providing expert guidance every step of the
+            way.</p>
+        </div>
+      </div>
+
+      <h2 style="text-align:center; margin-bottom:20px; color:#0056b3;"
+        class="fade-in">What We Do</h2>
+      <div class="features">
+        <div class="feature fade-in">
+          <h3>🎓 Study Abroad Guidance</h3>
+          <p>From university selection to admission processing, we guide you
+            throughout your journey.</p>
+        </div>
+        <div class="feature fade-in">
+          <h3>🛂 Visa Assistance</h3>
+          <p>Complete support with application, documentation, and interview
+            preparation.</p>
+        </div>
+        <div class="feature fade-in">
+          <h3>✈️ Travel Made Easy</h3>
+          <p>Flight bookings, embassy appointments, and pre-departure briefings
+            made simple.</p>
+        </div>
+      </div>
+
+      <div class="cta fade-in">
+        <h2>Ready to Start Your Journey?</h2>
+        <a href="contact.html">Contact Us Today</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

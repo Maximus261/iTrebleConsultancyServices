@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - iTreble Consultancy Services</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    .contact-hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .contact-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h2, .contact-form h2 {
+      margin-bottom: 20px;
+      color: #0056b3;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info i {
+      color: #0056b3;
+      margin-right: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: #0056b3;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #003d80;
+    }
+
+    .map {
+      margin: 40px auto;
+      max-width: 1100px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+
+    .alert {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .alert.success {
+      background: #e6ffed;
+      color: #1b7e28;
+      border: 1px solid #1b7e28;
+    }
+    .alert.error {
+      background: #ffeaea;
+      color: #b30000;
+      border: 1px solid #b30000;
+    }
+
+    #submitBtn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #fff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .side-bar {
+  height: 460vh;
+  top: 0;
+  right: 1px;
+  width: 300px;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  background: none;
+  display: none;
+}
+
+.side-bar #contact {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 80%;
+  margin-top: -10px;
+}
+
+#contact img {
+  cursor: pointer;
+}
+
+.side-bar #we,
+.side-bar #soc2 {
+  background: none;
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  cursor: pointer;
+  background-clip: text;
+  font-weight: bolder;
+  transition: 500ms linear;
+  color: rgb(1, 200, 255);
+}
+
+.side-bar #we:hover,
+.side-bar #soc2:hover {
+  text-decoration: underline;
+  transition: 500ms;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.side-bar #social {
+  background-color: rgb(25, 25, 89);
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 0;
+  height: 0;
+  width: 120px;
+  transition: 500ms ease;
+  padding: 20px;
+  list-style: none;
+  margin-left: 100px;
+}
+
+.side-bar #social li {
+  margin-bottom: 10px;
+}
+
+.side-bar #social a {
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#social {
+  position: absolute;
+  background-color: rgb(25, 25, 89);
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 0;
+  height: 0;
+  transition: 500ms ease;
+  padding: 20px;
+  list-style: none;
+  backdrop-filter: blur(10px);
+}
+
+
+    footer {
+    margin-top: 200px;
+    height: 200px;
+    background-color: #0c3365;
+  }
+
+  .all {
+    margin-top: 30px;
+    height: 200px;
+    width: 100%;
+    display: block;
+    gap: 100px;
+  }
+
+  .about {
+    width: 300px;
+    color: white;
+    margin: 30px;
+    font-size: 17px;
+    text-align: center;
+    margin-left: 80px;
+  }
+
+  .about h3 {
+    margin-bottom: 35px;
+  }
+
+  .use {
+    color: white;
+    margin: 30px;
+    font-size: 17px;
+    margin-left: 250px;
+    margin-top: -20px;
+    margin-bottom: 200px;
+    position: absolute;
+  }
+
+  .use ul {
+    display: flex;
+    gap: 20px;
+    margin-left: -60px;
+  }
+
+  .use li {
+    list-style: none;
+    transition: 500ms ease-in-out;
+  }
+
+  .use a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .soci {
+    color: white;
+    margin: 30px;
+    font-size: 17px;
+    margin-bottom: 200px;
+  }
+
+  .soci ul {
+    display: flex;
+    gap: 20px;
+    margin-left: -60px;
+  }
+
+  .soci li {
+    list-style: none;
+    transform: scale(100%);
+    transition: 500ms ease-in-out;
+    font-size: 20px;
+  }
+
+  .soci a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .use a:hover {
+    text-decoration: underline;
+  }
+
+  .soci li:hover {
+    transform: scale(130%);
+    transition: 500ms linear;
+  }
+
+  .cop {
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+  }
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  header {
+  display: flex;
+  gap: 100px;
+  padding: 15px 0;
+  position: fixed;
+  top: 0.1px;
+  width: 100%;
+  height: 50px;
+  transition: 400ms ease;
+  background: none;
+  z-index: 3;
+  backdrop-filter: blur(6px);
+}
+
+header #lgo {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#log {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+}
+
+#logo {
+  display: flex;
+  gap: 10px;
+}
+
+#name {
+  width: 130px;
+  margin-left: 40px;
+  color: rgb(12, 22, 217);
+  margin-top: -20px;
+}
+
+#contact {
+  display: flex;
+  gap: 10px;
+  width: 80%;
+}
+
+#contact img {
+  background-color: #0c3365;
+  padding: 10px;
+  border-radius: 20px;
+  height: 30px;
+  transition: 500ms ease;
+  margin-top: 30px;
+  position: absolute;
+}
+
+#contact img:hover {
+  background-color: #3f6ca6;
+  transform: rotate(360deg);
+}
+
+.menu {
+   right: 0;
+   margin-top: 50px;
+   position: sticky;
+   display: none;
+ }
+
+ .menu img {
+   background-color: rgb(26, 51, 103);
+   height: 30px;
+   border-radius: 5px 20px 0px 5px;
+   padding: 5px;
+   transition: 500ms ease;
+ }
+
+ .menu p {
+   margin-top: -5px;
+   margin-left: -5px;
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+   font-family: monospace;
+ }
+
+#we,
+#soc2 {
+  background: none;
+  font-size: 20px;
+  border: none;
+  border-right: 2px solid black;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  background-clip: text;
+  font-weight: 900;
+  color: rgb(228, 231, 95);
+  transition: 500ms linear;
+}
+
+header.transparent {
+  background-color: transparent;
+}
+
+header.white-bg {
+  background-color: rgb(11, 4, 55);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid white;
+  gap: 400px;
+}
+
+
+/* header end */
+
+#dropdown:hover #social {
+  display: block;
+  position: absolute;
+  opacity: 1;
+  height: 100px;
+}
+
+#dropdown2:hover #loc1 {
+  display: block;
+  position: absolute;
+  opacity: 1;
+  height: 100px;
+}
+
+
+#loc1 {
+  display: none;
+  display: block;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 0;
+  width: 150px;
+  height: 20px;
+  padding: 20px;
+  background-color: rgb(25, 25, 89);
+  transition: 500ms ease;
+}
+
+#loc1 a {
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px;
+  transition: 300ms ease;
+  font-weight: bold;
+}
+
+
+#social {
+  position: absolute;
+  background-color: rgb(25, 25, 89);
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 0;
+  height: 0;
+  transition: 500ms ease;
+  padding: 20px;
+  list-style: none;
+  backdrop-filter: blur(10px);
+}
+
+#social li {
+  margin-bottom: 10px;
+}
+
+#social a {
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 20px;
+
+}
+
+#dropdown:hover #social {
+  display: block;
+  position: absolute;
+  opacity: 1;
+  height: 120px;
+}
+
+#dropdown2:hover #loc1 {
+  display: block;
+  position: absolute;
+  opacity: 1;
+  height: 100px;
+}
+
+#lo:hover {
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#wa:hover {
+  background: linear-gradient(45deg, #25D366, #25D366);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+#fa:hover {
+  background: linear-gradient(45deg, #1877F2, #1877F2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+#in:hover {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+#ti:hover {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#wa,
+#in,
+#ti,
+#fa {
+  transition: 500ms ease-in-out;
+}
+
+    
+
+    @media(max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      #contact {
+    display: none;
+    }
+
+  .side-bar {
+    transition: 1s ease;
+  }
+
+  header {
+    width: 2%;
+  }
+
+  .menu {
+    display: block;
+    margin-top: -5px;
+    margin-left: 20px;
+    transform: scale(85%);
+    transition: 800ms ease;
+    cursor: pointer;
+    position: sticky;
+  }
+
+  .menu:hover {
+    transform: scale(100%);
+  }
+
+  .menu img:hover{
+    background-color: #1877F2;
+  }
+    }
+  </style>
+  </head>
+  <body>
+    <header id="navbar">
+      <a href="index.html" id="lgo">
+        <div id="logo">
+          <div>
+            <img src="images/logo2.webp" alt id="log">
+          </div>
+          <div id="name">
+            <p>iTreble Consultancy Services</p>
+          </div>
+        </div>
+      </a>
+      <ul id="contact">
+        <a href="index.html"><button id="we">HOME</button></a>
+        <a href="about.html"><button id="we">ABOUT</button></a>
+        <a href="services.html"><button id="we">SERVICES</button></a>
+        <div id="dropdown">
+          <button id="soc2">SOCIALS <span>˅</span></button>
+          <ul id="social">
+            <li id="wa"><a href="https://wa.me/2348160203837"><i
+                  class="fab fa-whatsapp"></i>
+                Whatsapp</a><br /></li>
+            <li id="fa"><a href="#"><i class="fab fa-facebook"></i>
+                Facebook</a><br /></li>
+            <li id="in"><a href="#"><i class="fab fa-instagram"></i>
+                Instagram</a><br /></li>
+            <li id="ti"><a href="#"><i class="fab fa-tiktok"></i>
+                Tiktok</a></li>
+          </ul>
+        </div>
+      </ul>
+      <div class="menu" onclick=showSidebar()>
+        <img src="images/menu.svg" alt>
+        <p>Menu</p>
+      </div>
+    </header>
+    <div class="side-bar">
+      <ul id="contact">
+        <li onclick="hideSidebar()"><img src="images/close.svg" alt></li>
+        <a href="index.html"><button id="we">HOME</button></a>
+        <a href="about.html"><button id="we">ABOUT</button></a>
+        <a href="services.html"><button id="we">SERVICES</button></a>
+        <div id="dropdown">
+          <button id="soc2">SOCIALS <span>˅</span></button>
+          <ul id="social">
+            <li id="wa"><a href="https://wa.me/2348160203837"><i
+                  class="fab fa-whatsapp"></i>
+                Whatsapp</a><br /></li>
+            <li id="fa"><a href="#"><i class="fab fa-facebook"></i>
+                Facebook</a><br /></li>
+            <li id="in"><a href="#"><i class="fab fa-instagram"></i>
+                Instagram</a><br /></li>
+            <li id="ti"><a href="#"><i class="fab fa-tiktok"></i>
+                Tiktok</a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+    <!-- Hero -->
+    <section class="contact-hero">
+      <h1>Contact iTreble Consultancy Services</h1>
+      <p>We’re here to help you achieve your study abroad & travel goals</p>
+    </section>
+
+    <div id="alertBox"></div>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p><i>📍</i> 123 Example Street, Lagos, Nigeria</p>
+        <p><i>📞</i> +234 800 123 4567</p>
+        <p><i>✉️</i> info@itrebleconsultancy.com</p>
+        <p><i>🌐</i> www.itrebleconsultancy.com</p>
+        <p>Follow us: 🌍 Facebook | Instagram | LinkedIn</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="send.php" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" rows="5" placeholder="Your Message"
+            required></textarea>
+          <button type="submit" id="submitBtn">
+            <span id="btnText">Send Message</span>
+            <span id="btnSpinner" style="display:none;"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Google Map Embed -->
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.234932763406!2d3.3792051153346283!3d6.524379295285181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b161d9f3f47%3A0xf1c2b32f2b7efda0!2sLagos!5e0!3m2!1sen!2sng!4v1674123456789"
+        allowfullscreen loading="lazy"></iframe>
+    </div>
+    <footer>
+      <div class="all">
+        <div class="use">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+        <hr />
+        <div class="cop">
+          <p>Copryright &copy; 2025 iTreble Consultancy Services. All rights
+            reserved</p>
+        </div>
+      </footer>
+      <script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get("status");
+      if (status) {
+        const box = document.getElementById("alertBox");
+        if (status === "success") {
+          box.innerHTML = `<div class="alert success">✅ Your message has been sent successfully! We’ll reply soon.</div>`;
+        } else if (status === "error") {
+          box.innerHTML = `<div class="alert error">❌ Sorry, something went wrong. Please try again later.</div>`;
+        }
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+
+      const form = document.querySelector("form");
+      const btn = document.getElementById("submitBtn");
+      const btnText = document.getElementById("btnText");
+      const btnSpinner = document.getElementById("btnSpinner");
+
+      form.addEventListener("submit", () => {
+        btn.disabled = true;
+        btnText.textContent = "Sending...";
+        btnSpinner.style.display = "inline-block";
+        btnSpinner.classList.add("spinner");
+      });
+    });
+
+    function showSidebar() {
+    const sidebar = document.querySelector('.side-bar')
+    sidebar.style.display = 'flex'
+}
+
+function hideSidebar() {
+    const sidebar = document.querySelector('.side-bar')
+    sidebar.style.display = 'none'
+}
+  </script>
+    </body>
+  </html>
